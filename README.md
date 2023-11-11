@@ -1,18 +1,21 @@
 # 2023 대구를 빛내는 해커톤
-
+<br>
 * 팀명
     * 죄잇나
-      
+    <br>  
 * 제출 타입 및 주제
     * S타입 - 사용자 맞춤형 법률 자문 챗봇 서비스
-      
+      <br>
 * 프로젝트 한 줄 설명
     * 취약 계층을 위해 LLM 기술과 판례 데이터를 활용한 법률 도우미 챗봇
-      
+      <br>
 * 프로젝트 활용된 기술
-    * LLM(거대 언어 모델, Large Language Model) 
-    * PG Vector
+    * Generative AI Studio에서 제공하는 프롬프트 설계를 활용 - 질문에 대한 답변을 해주는 챗봇 역할
+      [![Generative AI Studio](https://www.google.co.kr/imgres?imgurl=https%3A%2F%2Fmiro.medium.com%2Fv2%2Fresize%3Afit%3A1400%2F1*6GkpsfFHSnlA_S8uGdQLxg.png&tbnid=Bs6mIa5d3tDRYM&vet=12ahUKEwjI34Xq47uCAxXjb_UHHbBtAOAQMygCegQIARBN..i&imgrefurl=https%3A%2F%2Fmedium.com%2Fgoogle-cloud%2Fa-guide-to-tuning-language-foundation-models-in-google-cloud-generative-ai-studio-e47b0d49a43d&docid=r4gl4MAuzsSFgM&w=713&h=420&q=generative%20ai%20studio&ved=2ahUKEwjI34Xq47uCAxXjb_UHHbBtAOAQMygCegQIARBN)](https://cloud.google.com/generative-ai-studio?hl=ko)
+    * PG Vector를 활용 - 데이터를 벡터로 저장 및 쿼리 가능
+    [![PG Vector](https://supabase.com/images/blog/embeddings/og_pgvector.png)](https://github.com/pgvector/pgvector)
     * 배포 때 사용한 기술
+    <br>
       
 * 시연 영상
     * 유튜브 링크
@@ -22,6 +25,14 @@
           00:00
 
 # 배포
+<br>
+* front
+   * Google Cloud Platform의 Computer Engine에서 VM instance 추가 
+   * pip, nginx 및 react 관련 module 다운로드 
+   * lawItNa repo의 Front 부분을 build
+   * 빌드한 부분을 nginx와의 symbolic link 연결을 통해 배포 
+   * instance의 외부 ip를 통한 접속 가능
+* back
 
 # 로컬 실행 방법
 

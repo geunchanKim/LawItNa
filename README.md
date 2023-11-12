@@ -10,7 +10,8 @@
     * 취약 계층을 위해 LLM 기술과 판례 데이터를 활용한 법률 도우미 챗봇
       
 * 프로젝트 활용된 기술
-    * Generative AI Studio에서 제공하는 프롬프트 설계를 활용 - 질문에 대한 답변을 해주는 챗봇 역할
+    <!-- * Generative AI Studio에서 제공하는 프롬프트 설계를 활용 - 질문에 대한 답변을 해주는 챗봇 역할 -->
+    * Vertexai에서 제공하는 챗봇을 이용
   <img src="https://miro.medium.com/v2/resize:fit:1400/1*6GkpsfFHSnlA_S8uGdQLxg.png"><br>
     * PG Vector를 활용 - 데이터를 벡터로 저장 및 쿼리 가능
   <img src="https://supabase.com/images/blog/embeddings/og_pgvector.png"><br>

@@ -61,7 +61,9 @@
 
 0. 사전 준비
 * 로컬에 가져오기
-'git clone https://github.com/mouse4432/LawItNa.git'
+~~~
+git clone https://github.com/mouse4432/LawItNa.git
+~~~
 
 * version
 '''

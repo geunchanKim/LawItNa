@@ -18,13 +18,9 @@ except :
     print("Api connect fail : Could not found api key file.")
     sys.exit()
 
-
-
 class test :
     def __init__(self):
-        return
-
-    def service(self, query_text):
+        self.history = []
         PROJECT_ID = "esoteric-stream-399606"
         LOCATION = "us-central1"
 
@@ -37,7 +33,7 @@ class test :
 
             return model, tokenizer
 
-        model, tokenizer = get_KoSimCSE()
+        self.model, self.tokenizer = get_KoSimCSE()
 
         # VectorDB 연결
         instance_connection_name = "esoteric-stream-399606:asia-northeast3:wjdfoek3"
@@ -59,25 +55,18 @@ class test :
             )
             return conn
 
-        pool = sqlalchemy.create_engine(
+        self.pool = sqlalchemy.create_engine(
             "postgresql+pg8000://",
             creator=getconn,
         )
+        return
 
-        with pool.connect() as db_conn:
-            db_conn.execute(
-            sqlalchemy.text(
-                "CREATE EXTENSION IF NOT EXISTS vector with schema public"
-            )
-        )
-        db_conn.commit()
-
+    def service(self, query_text):
         chat_model = ChatModel.from_pretrained("chat-bison@001")  #chat model 불러오기
 
+        inputs = self.tokenizer(query_text, padding=True, truncation=True, return_tensors="pt")
 
-        inputs = tokenizer(query_text, padding=True, truncation=True, return_tensors="pt")
-
-        embeddings, _ = model(**inputs, return_dict=False)
+        embeddings, _ = self.model(**inputs, return_dict=False)
         embedding_arr = embeddings[0][0].detach().numpy()
         embedding_str = ",".join(str(x) for x in embedding_arr)
         embedding_str = "["+embedding_str+"]"
@@ -87,22 +76,24 @@ class test :
                     ORDER BY v <=> :query_vec LIMIT 3"""
         ), {"query_vec": embedding_str}
 
-        with pool.connect() as db_conn: # 쿼리 실행문
+        with self.pool.connect() as db_conn: # 쿼리 실행문
             result = db_conn.execute(
                 insert_stat, parameters = param
             ).fetchall()
 
         #query 결과를 문자열로 바꾸기 <- Context에는 문자열만 들어갈 수 있음
         judge = ""
-
-        for res in result :
-            judge += res[0]
+        info = ["판례명", "관련 법령", "주장", "내용", "판결문"]
+        for i in range(len(result)) :
+            j = i % 5
+            judge += info[i] + result[i][0]
             judge += " "
 
         chat_model = ChatModel.from_pretrained("chat-bison@001")
 
         output_chat = chat_model.start_chat(
             context="법률 자문을 구하는 사용자들에게 기존의 판례들에 기반해 답변해주는 서비스야 주어진 판례를 보고 요약해서 사용자의 상황에 어떻게 적용해야할 지 답변해줘 판례 : " +judge,
+            message_history = self.history,
             temperature=0.3,
             max_output_tokens=1024,
             top_p=0.8,
@@ -110,5 +101,8 @@ class test :
         )
 
         output = output_chat.send_message(query_text).text
+        self.history.append(ChatMessage(content = query_text, author = "user"))
+        self.history.append(ChatMessage(content = output, author = "bot"))
+        print(self.history)
 
         return output

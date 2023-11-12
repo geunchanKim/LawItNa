@@ -66,31 +66,33 @@ git clone https://github.com/mouse4432/LawItNa.git
 ~~~
 
 * version
-'''
+~~~
 python --version #python 3.10.12 이상
 pip --version #pip 22.0.2 이상
 npm -v #npm 10.1.0 이상
 node -v #node 20.8.1 이상
-'''
+~~~
 
 * requirements.txt 다운로드
-'''
+~~~
 pip install -r requirements.txt
-'''
+~~~
 
 * pytorch 다운로드
+~~~
 https://pytorch.org/get-started/locally
 본인 환경에 맞게 설정 후 다운로드 코드 사용해서 pytorch 다운
+~~~
 
 1. Back 실행
 * 터미널을 Back으로 설정
-'''
+~~~
 python run.py | python3 run.py #본인 환경에 맞는 python 명령어 실행
-'''
+~~~
 
 2. Front 실행
 * 터미널을 Front으로 설정
-'''
+~~~
 npm update
 npm start run
-'''
+~~~

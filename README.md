@@ -57,6 +57,9 @@
    * VM instance내에서 run.py 실행
    * instance의 외부 ip를 통한 접속 가능
 
+* 배포 링크
+    http://www.lawitna.kro.kr/
+
 # 로컬 실행 방법
 
 0. 사전 준비

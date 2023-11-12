@@ -9,8 +9,8 @@ from vertexai.preview.language_models import ChatModel, InputOutputTextPair, Cha
 # TextGenerationModel, InputOutputTextPair, TextEmbeddingModel
 
 current_directory = os.getcwd()
-# path = current_directory + '\\Back\\esoteric-stream-399606-6993766aaeea.json' #window 환경에서 path 변수
-path = current_directory + '/Back/esoteric-stream-399606-6993766aaeea.json' #mac, linux 환경에서 path 변수
+# path = current_directory + '\\esoteric-stream-399606-6993766aaeea.json' #window 환경에서 path 변수
+path = current_directory + '/esoteric-stream-399606-6993766aaeea.json' #mac, linux 환경에서 path 변수
 print(path)
 try :
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path

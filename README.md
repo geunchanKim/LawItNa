@@ -26,7 +26,7 @@
     데이터들은 판례명, 원고, 피고의 주장, 판례와 관련된 법률명, 판례 내용, 판례 결과로 이루어져 있다.
     이 데이터들은 Chat model의 context에 입력되어 Chat model이 이 데이터들을 사용자의 질문에 답변할 때 활용한다.
   <img src="https://supabase.com/images/blog/embeddings/og_pgvector.png"><br>
-    * [배포 때 사용한 기술](# 배포) 
+    * [배포 때 사용한 기술](#배포) 
 
 * 시연 영상
     * [유튜브 링크](https://youtu.be/zst59_EFqmA)

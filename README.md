@@ -27,13 +27,25 @@
 # 배포
 
 * front
-   * Google Cloud Platform의 Computer Engine에서 VM instance 추가 
+   * Google Cloud Platform의 Computer Engine에서 VM instance 추가
    * pip, nginx 및 react 관련 module 다운로드 
    * lawItNa repo의 Front 부분을 build
    * 빌드한 부분을 nginx와의 symbolic link 연결을 통해 배포 
    * instance의 외부 ip를 통한 접속 가능
      
 * back
+   * Google Cloud Platform의 Computer Engine에서 VM instance 추가
+   * VM instance
+        * name: ububtu-instance
+        * id: 8855103337681558766
+        * region: asia-northeast3 (seoul)
+        * external ip: 34.64.242.154
+        * web browser ssh 콘솔로 제어
+   * pip, flask, flask_cors 등 기본 환경 및 flask 실행에 필요한 module 다운로드
+   * google-ai-platform, pg8000 등 google generatiive ai, pg vector api 사용을 위한 module 다운로드
+   * instance내에 backend repository git-clone
+   * VM instance내에서 run.py 실행
+   * instance의 외부 ip를 통한 접속 가능
 
 # 로컬 실행 방법
 

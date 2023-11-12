@@ -9,7 +9,7 @@ from vertexai.preview.language_models import ChatModel, InputOutputTextPair, Cha
 # TextGenerationModel, InputOutputTextPair, TextEmbeddingModel
 
 current_directory = os.getcwd()
-path = current_directory + '\\Back\\esoteric-stream-399606-6993766aaeea.json'
+path = current_directory + '\\esoteric-stream-399606-6993766aaeea.json'
 print(path)
 try :
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path
@@ -73,7 +73,7 @@ class test :
 
         insert_stat, param = sqlalchemy.text(
                     """SELECT info, related, insist, content, close FROM minsa
-                    ORDER BY v <=> :query_vec LIMIT 3"""
+                    ORDER BY v <=> :query_vec LIMIT 1"""
         ), {"query_vec": embedding_str}
 
         with self.pool.connect() as db_conn: # 쿼리 실행문
@@ -81,18 +81,21 @@ class test :
                 insert_stat, parameters = param
             ).fetchall()
 
+        print(result)
         #query 결과를 문자열로 바꾸기 <- Context에는 문자열만 들어갈 수 있음
         judge = ""
         info = ["판례명", "관련 법령", "주장", "내용", "판결문"]
         for i in range(len(result)) :
-            j = i % 5
-            judge += info[i] + result[i][0]
-            judge += " "
+            for j in range(len(result[i])) :
+                judge += info[j] + result[i][j]
+                judge += " "
+
+        print(judge)
 
         chat_model = ChatModel.from_pretrained("chat-bison@001")
 
         output_chat = chat_model.start_chat(
-            context="법률 자문을 구하는 사용자들에게 기존의 판례들에 기반해 답변해주는 서비스야 주어진 판례를 보고 요약해서 사용자의 상황에 어떻게 적용해야할 지 답변해줘 판례 : " +judge,
+            context="법률 자문을 구하는 사용자들에게 기존의 판례들에 기반해 답변해주는 서비스야 주어진 판례를 보고 요약해서 사용자의 상황에 어떻게 적용해야할 지 답변해주거나 사용자의 질문에 맞는 답변을 해줘 판례 : " +judge,
             message_history = self.history,
             temperature=0.3,
             max_output_tokens=1024,
@@ -103,6 +106,5 @@ class test :
         output = output_chat.send_message(query_text).text
         self.history.append(ChatMessage(content = query_text, author = "user"))
         self.history.append(ChatMessage(content = output, author = "bot"))
-        print(self.history)
 
         return output

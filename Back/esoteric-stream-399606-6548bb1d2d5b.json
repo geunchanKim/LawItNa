@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "esoteric-stream-399606",
+    "private_key_id": "6548bb1d2d5b30979d99acb903cd3cae1f9c4c78",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCW7uy7cmXNKgyb\n4hchtznKo4W19ZE7d9XdkKzeGXS3xsapA//OBiC0UtjKbiqVC5I1HGDoARONeZlf\nkDJD5WKtGcQYTOt5H/EQJgV0tNzLeY56nUMQ5AwYyq80c6F7snw11vfpY2AVbMG1\nkStVxRKFmkgQojFaiTmHWjxPqCBD8QWWA+HSsFq64JXAPxekAeHnqnlniTEE3RA9\niu8mzPAPAro4YH/fkwZO+i7MVmru8ViD87q7Nxr29DrCuwfJNclse5KbJL4lgtcs\nlRH6QejNszreUUvx0Z8c0/msjJiQkcTV1Tdh/CqwvHlgHQbpeYCLJXCZW58jY4P9\nRr7UntChAgMBAAECggEAAZru55ty27i7w5im+FPTiIUusd23urMukhmszPvmUuIJ\nUNjbCpzkEibjaVu8ljM2TdxMZ4tDYvjNGcgV0MUKxJ6GiF+hDXu6e5p76l7WDk/v\npPwxL2fNfSICtQMZz4/5ZDUyE8hbyD6M3Np7ZIEhDkyywYKIFddpxje+dnZqSW6t\nmxygE6xaH/AuuxampQBjinqa8PmM+U0fjHUS4ZSx521WCeX0XLXQZ6npHQD4J6vD\nDz2toXSnjDrfW65tZ9ZNUj9L+U1GgRw60BJ/3UFDdbHPx12b9sPcZnkvee72UPtB\nAn/g3uZH1NO0lwz70vYwYym17YzOZzSH8nPKi32bsQKBgQDGYrDa3ECkBLPffviL\nEFB+yV470P3mpe6o7Qxqyw/USxfbe6oY5jB3E3BCp2gcopJv/o1fX3GNiR7ccvqL\ncUH6j89vd52/CeyEFZW/Hc+rvFdRyxkviJf0enp7ATghzC7Wo481UaVrGE1WcF4z\nB7lcZO2b5niS7foVhvYBdAytnQKBgQDCxFF9Hq46GCC2hdF7cSfSdI6Qv93zArTL\nXvUG32I1zEbjbQNv6Ybg9l9mHY4EmwA/Mzk6QNramh76NKa+W7uOBHrW4+UX8RRV\nLsGkfUWIvp6VRKkdYBt897Zv7x4DdZPIdMsyoKCsFvOTDIzsJJecfZjC+SL5Gv3C\nk8tqRDvB1QKBgGHw6UUzxcnz9GWbhtMI++SMP7SiSidrtja5yQ6UL71sUVvvYpum\nUTkIZLzTbyfr7wXRkzQJp8Lrdkv5i8353Uv5YbyzPjLJkHXpPiO7cQJlGmrsLQP1\nmKd/LCa8BF1TM7CN0S7Ony8PMWdCVI82+gEuZsw37UEEshmcpqkzBOtVAoGAHttZ\nibglpECUVjaHRMZdp8MdnyM2t7xzBlFqAoe7mIhfpsJrq/xUiSmfXZ9LE8G23Uxx\nQaBqy/1k8QEMddY0tcBR8d+zOQLR1NkOhs/uB0cj+sQhAu1qDXd1aPB6UdP78ONI\nGiJGsl0EhASWAwedGYbwf9tWxh6Xm48syA49ZW0CgYBCJQcYztVQob+YYUBA6Ahy\nEX4d2qXa002t/w+MHWCkxFi44LiMQgar01M39fW089gosZYNQyV61pNb+sCwmNCS\n+l/y+j4m2xuEoAaF+TJQP6woXfrFeNdYDxO/bSrBnmcyNlXXVPioyQ9lRIhcQhyu\nXcPPf9WIQhGfoXTUbHPfAg==\n-----END PRIVATE KEY-----\n",
+    "client_email": "wjdfo-962@esoteric-stream-399606.iam.gserviceaccount.com",
+    "client_id": "106351170250966607745",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wjdfo-962%40esoteric-stream-399606.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }

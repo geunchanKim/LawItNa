@@ -20,19 +20,16 @@
     Google Cloud SQL에서 제공하는 PostgreSQL의 pgvector를 이용해 VectorDB를 구현했다.
     VectorDB의 경우, 일반 DB와 같은 형태인데 vector 값도 저장할 수 있는 DB로 벡터끼리의 유사도를 계산할 수 있는 기능을 제공한다.
     데이터셋은 81년도부터 현재까지 민사소송과 관련된 판례들을 담았고, 원고의 주장과 피고의 주장을 합쳐서 벡터화 시켜 저장했다.
+    해당 데이터셋의 출처는 [AI Hub의 법률/규정 (판결서, 약관 등) 텍스트 분석 데이터셋](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=580)이다.
     DB에 질의를 할 땐, 사용자의 질문을 벡터화해서 원고의 주장, 피고의 주장과 Cosine Distance가 가장 짧은 3개의 데이터들만을 가져왔는데,
     3개의 데이터만 가져온 이유는 Chat model의 input token 범위 제한때문에 그렇다.
     데이터들은 판례명, 원고, 피고의 주장, 판례와 관련된 법률명, 판례 내용, 판례 결과로 이루어져 있다.
     이 데이터들은 Chat model의 context에 입력되어 Chat model이 이 데이터들을 사용자의 질문에 답변할 때 활용한다.
   <img src="https://supabase.com/images/blog/embeddings/og_pgvector.png"><br>
-    * 배포 때 사용한 기술
+    * [배포 때 사용한 기술](# 배포) 
 
 * 시연 영상
-    * 유튜브 링크
-    * 유튜브 영상 설명란에 다음과 같은 규칙을 사용하여 타임스탬프를 작성할 것
-          00:00
-          00:00
-          00:00
+    * [유튜브 링크](https://youtu.be/zst59_EFqmA)
 
 # 배포
 
@@ -57,8 +54,7 @@
    * VM instance내에서 run.py 실행
    * instance의 외부 ip를 통한 접속 가능
 
-* 배포 링크
-    http://www.lawitna.kro.kr/
+* [배포 링크](http://www.lawitna.kro.kr/)
 
 # 로컬 실행 방법
 

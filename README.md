@@ -39,7 +39,8 @@
    * Google Cloud Platform의 Computer Engine에서 VM instance 추가
    * pip, nginx 및 react 관련 module 다운로드 
    * lawItNa repo의 Front 부분을 build
-   * 빌드한 부분을 nginx와의 symbolic link 연결을 통해 배포 
+   * 빌드한 부분을 nginx와의 symbolic link 연결
+   * nginx 재시작
    * instance의 외부 ip를 통한 접속 가능
      
 * back
